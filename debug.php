@@ -28,7 +28,7 @@ class debug
             $heading .= '<span ' . (isset($debug[1]['file']) ? 'title="' . $debug[1]['file'] . '" ' : '') . '>';
         }
         $heading .= date('Y-m-d H:i:s') . '::';
-        $heading .= trim(implode('/', array_slice(explode('/', file_get_contents('.git/HEAD')), 2))) . '::';
+        $heading .= trim(implode('/', array_slice(explode('/', file_get_contents('./.git/HEAD')), 2))) . '::';
         $heading .= (isset($debug[1]['class']) ? $debug[1]['class'] : $debug[1]['file']) . '::';
         $heading .= (isset($debug[1]['function']) ? $debug[1]['function'] : '') . '::';
         $heading .= (isset($debug[0]['line']) ? $debug[0]['line'] : '');
@@ -73,7 +73,7 @@ class debug
                 $display .= self::NL . self::TAB . implode(self::NL . self::TAB, $result) . self::NL;
             }
 
-            file_put_contents('debug.log', $display, FILE_APPEND | LOCK_EX);
+            file_put_contents('./debug.log', $display, FILE_APPEND | LOCK_EX);
         } else {
             echo($display);
         }
