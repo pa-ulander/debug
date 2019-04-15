@@ -2,7 +2,7 @@
     "name": "pa-ulander/debug",
     "description": "simple and old, very old, old school debugging for php scripts",
     "require": {
-        "php": "=<5.0"
+        "php": "^5.0"
     },
     "autoload": {
         "psr-4": {
