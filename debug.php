@@ -67,8 +67,8 @@ class debug
             $display .= self::NL;
 
             if (2 === $logToFile) {
-                $oEX   = new \Exception();
-                $trace = explode(self::NL, $oEX->getTraceAsString());
+                $ex   = new \Exception();
+                $trace = explode(self::NL, $ex->getTraceAsString());
                 $trace = array_reverse($trace);
                 array_shift($trace);
                 array_pop($trace);
