@@ -1,4 +1,7 @@
-Simple old school debug class from php early 5 days. Can be handy still to this day for quick debugging.
+Simple old school debug class from php early 5 days. 
+
+Can be handy still to this day for quick debugging in old legacy projects.
+
 It does one thing only. Sort of a super-stupid console.log for php.
 
 Dumps to screen or logfile.
