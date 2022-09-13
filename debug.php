@@ -32,8 +32,8 @@ class debug
 
         $heading .= date('Y-m-d H:i:s') . '::';
 
-        if (file_exists('../../.git/HEAD')) {
-            $heading .= trim(implode('/', array_slice(explode('/', file_get_contents('../../.git/HEAD')), 2))) . '::';
+        if (file_exists('/var/www/.git/HEAD')) {
+            $heading .= trim(implode('/', array_slice(explode('/', file_get_contents('/var/www/.git/HEAD')), 2))) . '::';
         }
 
         $heading .= (isset($debug[1]['class']) ? $debug[1]['class'] : $debug[1]['file']) . '::';
@@ -82,7 +82,7 @@ class debug
                 $display .= self::NL . self::TAB . implode(self::NL . self::TAB, $result) . self::NL;
             }
 
-            file_put_contents('../../debug.log', $display, FILE_APPEND | LOCK_EX);
+            file_put_contents('/var/www/storage/logs/debug.log', $display, FILE_APPEND | LOCK_EX);
 
         } else {
 
