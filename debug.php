@@ -47,8 +47,7 @@ class debug
         $display = '<div style="background-color: #f5f5f5; margin-top: 5px; border-top: 3px #8B0000 dashed; display: block; clear: both; text-align: left; padding: 5px; margin-top: 2px">' . self::NL;
         $display .= '<!-- Debug info -->' . self::NL;
         $display .= '<span style="font-weight: bold; font-size: 12px;">' . $heading . '</span><br />' . self::NL;
-        $display .= '<pre style="font-size: 12px;">' . self::NL . utf8_encode(htmlentities(print_r($toInspect,
-                true), ENT_QUOTES)) . self::NL . '</pre>' . self::NL;
+        $display .= '<pre style="font-size: 12px;">' . self::NL . htmlentities(print_r($toInspect, true), ENT_QUOTES) . self::NL . '</pre>' . self::NL;
 
         if ($toInspect === false) {
             $display .= '(bool) false';
@@ -63,7 +62,7 @@ class debug
         if ($logToFile) {
             $display = self::NL;
             $display .= $heading . self::NL;
-            $display .= utf8_encode(html_entity_decode(print_r($toInspect, true), ENT_QUOTES)) . self::NL;
+            $display .= html_entity_decode(print_r($toInspect, true), ENT_QUOTES) . self::NL;
             $display .= self::NL;
 
             if (2 === $logToFile) {
